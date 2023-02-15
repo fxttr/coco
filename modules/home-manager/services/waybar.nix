@@ -8,6 +8,11 @@ let
 in
 {
   options.coco.waybar.enable = mkEnableOption "Install and configure waybar";
+  options.coco.waybar.mobile = mkOption {
+      type = types.bool;
+      description = "Enable a smaller version of waybar for mobile devices";
+      default = false;
+  };
 
   config = mkIf cfg.enable {
     programs.waybar =
@@ -27,7 +32,22 @@ in
             "clock#3"
             "custom/right-arrow-dark"
           ];
-          modules-right = [
+          modules-right = if cfg.mobile then [
+            "custom/left-arrow-dark"
+            "network"
+            "custom/left-arrow-light"
+            "custom/left-arrow-dark"
+            "memory"
+            "custom/left-arrow-light"
+            "custom/left-arrow-dark"
+            "cpu"
+            "custom/left-arrow-light"
+            "custom/left-arrow-dark"
+            "battery"
+            "custom/left-arrow-light"
+            "custom/left-arrow-dark"
+            "tray"
+          ] else [
             "custom/left-arrow-dark"
             "network"
             "custom/left-arrow-light"
@@ -104,7 +124,7 @@ in
             format = "{}% ";
           };
           battery = {
-            bat = "bat0";
+            bat = "BAT0";
             states = {
               warning = 30;
               critical = 15;
@@ -116,7 +136,7 @@ in
             format-icons = [ "" "" "" "" "" ];
           };
           network = {
-            format-wifi = "{essid} ({signalStrength}%) ";
+            format-wifi = "({signalStrength}%) ";
             format-ethernet = "Ethernet ";
             format-linked = "Ethernet (No IP) ";
             format-disconnected = "Disconnected ";
