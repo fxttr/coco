@@ -6,6 +6,11 @@ let cfg = config.coco.irssi;
 
 in {
   options.coco.irssi.enable = mkEnableOption "Install and configure irssi";
+  options.coco.irssi.user = mkOption {
+      type = types.str;
+      description = "Set the nick and name variable";
+      default = "";
+  };
 
   config = mkIf cfg.enable {
   programs.irssi = {
@@ -14,8 +19,8 @@ in {
       {
         libera = {
           type = "IRC";
-          nick = "fxttr";
-          name = "fxttr";
+          nick = cfg.user;
+          name = cfg.user;
           server = {
             address = "irc.libera.chat";
             port = 6697;
