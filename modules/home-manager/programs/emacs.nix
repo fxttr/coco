@@ -53,6 +53,7 @@ in {
           flycheck-rust
           cargo
           geiser
+          magit
         ]));
     };
   };
