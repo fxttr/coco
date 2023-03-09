@@ -77,7 +77,7 @@ in
             };
           };
 
-          menu = "wofi --show drun --gtk-dark"
+          menu = "wofi --show drun --gtk-dark";
 
           output = { "*".bg = ''"${wallpaper}" fit''; };
 
