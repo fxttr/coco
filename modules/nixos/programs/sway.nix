@@ -17,7 +17,7 @@ in {
         wl-clipboard
         mako
         alacritty
-        bemenu
+        wofi
       ];
       extraSessionCommands = ''
         			export SDL_VIDEODRIVER=wayland

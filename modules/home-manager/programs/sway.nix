@@ -77,7 +77,7 @@ in
             };
           };
 
-          menu = "bemenu-run -m all --fn 'Source Code Pro 14' --nb '#${colorscheme.dark.bg_0}' --ab '#${colorscheme.dark.bg_0}' --fb '#${colorscheme.dark.bg_0}' --tb '#${colorscheme.dark.bg_0}' --sb '#${colorscheme.dark.bg_0}' --hb '#${colorscheme.dark.bg_0}' --tf '#${colorscheme.dark.fg_0}' --hf '#${colorscheme.dark.red}' --no-exec | xargs swaymsg exec --";
+          menu = "wofi --show drun --gtk-dark"
 
           output = { "*".bg = ''"${wallpaper}" fit''; };
 
