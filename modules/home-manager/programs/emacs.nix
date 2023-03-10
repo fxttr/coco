@@ -13,7 +13,9 @@ in {
       enable = true;
 
       extraPackages = (epkgs:
-        agda2-mode
+        [
+          agda2-mode
+        ] ++
         (with pkgs; [
           pkgs.mu
         ]) ++
