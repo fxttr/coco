@@ -15,6 +15,7 @@ in {
       extraPackages = (epkgs:
         (with pkgs; [
           pkgs.mu
+          pkgs.agda2-mode
         ]) ++
         (with epkgs.melpaPackages; [
           monokai-pro-theme
