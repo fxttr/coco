@@ -88,6 +88,5 @@ in {
             userName = user;
           };
         }) cfg.accounts;
-      };
   };
 }
