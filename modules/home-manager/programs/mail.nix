@@ -65,7 +65,8 @@ in {
 
     accounts.email = {
       accounts = hm.dag.map (x:
-        x.dagName = {
+        {
+          x.dagName = {
             address = x.address;
             imap.host = x.imap;
             mbsync = {
@@ -87,7 +88,7 @@ in {
             smtp.host = x.smtp;
             userName = x.user;
           };
-        ) cfg.accounts;
+        }) cfg.accounts;
       };
   };
 }
