@@ -64,30 +64,32 @@ in {
     };
 
     accounts.email = {
-      lib.lists.forEach cfg.accounts (x:
-        x.dagName = {
-          address = x.address;
-          imap.host = x.imap;
-          mbsync = {
-            enable = true;
-            create = "maildir";
-          };
-          msmtp.enable = true;
-          mu.enable = true;
-          primary = x.primary;
-          realName = x.name;
-          signature = {
-            text = ''
+      accounts = {
+        lib.lists.forEach cfg.accounts (x:
+          x.dagName = {
+            address = x.address;
+            imap.host = x.imap;
+            mbsync = {
+              enable = true;
+              create = "maildir";
+            };
+            msmtp.enable = true;
+            mu.enable = true;
+            primary = x.primary;
+            realName = x.name;
+            signature = {
+              text = ''
                  Mit freundlichen Grüßen
                  ${x.name}
             '';
-            showSignature = "append";
+              showSignature = "append";
+            };
+            passwordCommand = "${pkgs.busybox}/bin/cat " + x.passwordPath;
+            smtp.host = x.smtp;
+            userName = x.user;
           };
-          passwordCommand = "${pkgs.busybox}/bin/cat " + x.passwordPath;
-          smtp.host = x.smtp;
-          userName = x.user;
-        };
-      );
+        );
+      };
     };
   };
 }
