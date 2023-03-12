@@ -64,7 +64,7 @@ in {
     };
 
     accounts.email = {
-      accounts = lib.lists.forEach cfg.accounts (x:
+      accounts = map (x:
         {
           x.dagName = {
             address = x.address;
@@ -89,7 +89,7 @@ in {
             userName = x.user;
           };
         }
-        );
+        ) cfg.accounts;
       };
   };
 }
