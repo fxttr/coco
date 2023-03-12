@@ -55,7 +55,7 @@ in {
             };
     '';
   };
-      
+  
   config = mkIf cfg.enable {
     programs = {
       mu.enable = true;
@@ -65,29 +65,30 @@ in {
 
     accounts.email = {
       accounts = hm.dag.map (x: {
-          x.dagName = {
-            address = x.address;
-            imap.host = x.imap;
-            mbsync = {
-              enable = true;
-              create = "maildir";
-            };
-            msmtp.enable = true;
-            mu.enable = true;
-            primary = x.primary;
-            realName = x.name;
-            signature = {
-              text = ''
-                 Mit freundlichen Grüßen
-                 ${x.name}
-            '';
-              showSignature = "append";
-            };
-            passwordCommand = "${pkgs.busybox}/bin/cat " + x.passwordPath;
-            smtp.host = x.smtp;
-            userName = x.user;
+        inherit (x) dagName address imap primary name name passwordPath smtp user;
+        dagName = {
+          address = address;
+          imap.host = imap;
+          mbsync = {
+            enable = true;
+            create = "maildir";
           };
-        }) cfg.accounts;
-      };
+          msmtp.enable = true;
+          mu.enable = true;
+          primary = primary;
+          realName = name;
+          signature = {
+            text = ''
+                 Mit freundlichen Grüßen
+                 ${name}
+            '';
+            showSignature = "append";
+          };
+          passwordCommand = "${pkgs.busybox}/bin/cat " + passwordPath;
+          smtp.host = smtp;
+          userName = user;
+        };
+      }) cfg.accounts;
+    };
   };
 }
