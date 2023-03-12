@@ -63,10 +63,9 @@ in {
       mbsync.enable = true;
     };
 
-    accounts.email = {
-      accounts = hm.dag.map (x: {
+    accounts.email = hm.dag.map (x: {
           inherit x;
-          dagName = {
+          accounts.dagName = {
             address = address;
             imap.host = imap;
             mbsync = {
