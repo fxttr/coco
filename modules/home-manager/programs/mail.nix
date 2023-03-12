@@ -65,6 +65,7 @@ in {
 
     accounts.email = {
       accounts = lib.lists.forEach cfg.accounts (x:
+        {
           x.dagName = {
             address = x.address;
             imap.host = x.imap;
@@ -87,6 +88,7 @@ in {
             smtp.host = x.smtp;
             userName = x.user;
           };
+        }
         );
       };
   };
