@@ -64,7 +64,7 @@ in {
     };
 
     accounts.email = {
-      accounts = map (x:
+      accounts = hm.dag.map (x:
         {
           x.dagName = {
             address = x.address;
