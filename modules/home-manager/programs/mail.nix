@@ -64,29 +64,29 @@ in {
     };
 
     accounts.email = hm.dag.map (x: {
-          inherit x;
-          accounts.dagName = {
-            address = address;
-            imap.host = imap;
-            mbsync = {
-              enable = true;
-              create = "maildir";
-            };
-            msmtp.enable = true;
-            mu.enable = true;
-            primary = primary;
-            realName = name;
-            signature = {
-              text = ''
+      inherit x;
+      accounts."${dagName}" = {
+        address = address;
+        imap.host = imap;
+        mbsync = {
+          enable = true;
+          create = "maildir";
+        };
+        msmtp.enable = true;
+        mu.enable = true;
+        primary = primary;
+        realName = name;
+        signature = {
+          text = ''
                  Mit freundlichen Grüßen
                  ${name}
             '';
-              showSignature = "append";
-            };
-            passwordCommand = "${pkgs.busybox}/bin/cat " + x.passwordPath;
-            smtp.host = smtp;
-            userName = user;
-          };
-        }) cfg.accounts;
+          showSignature = "append";
+        };
+        passwordCommand = "${pkgs.busybox}/bin/cat " + x.passwordPath;
+        smtp.host = smtp;
+        userName = user;
+      };
+    }) cfg.accounts;
   };
 }
