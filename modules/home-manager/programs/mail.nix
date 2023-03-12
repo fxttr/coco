@@ -65,7 +65,7 @@ in {
 
     accounts.email = {
       accounts = hm.dag.map (x: {
-        inherit (x) dagName address imap primary name name passwordPath smtp user;
+        inherit (x) dagName address imap primary name passwordPath smtp user;
         dagName = {
           address = address;
           imap.host = imap;
