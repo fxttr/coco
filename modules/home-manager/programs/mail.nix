@@ -65,28 +65,27 @@ in {
 
     accounts.email = {
       accounts = hm.dag.map (x: {
-        inherit (x) dagName address imap primary name passwordPath smtp user;
-        dagName = {
-          address = address;
-          imap.host = imap;
+        x.dagName = {
+          address = x.address;
+          imap.host = x.imap;
           mbsync = {
             enable = true;
             create = "maildir";
           };
           msmtp.enable = true;
           mu.enable = true;
-          primary = primary;
-          realName = name;
+          primary = x.primary;
+          realName = x.name;
           signature = {
             text = ''
                  Mit freundlichen Grüßen
-                 ${name}
+                 ${x.name}
             '';
             showSignature = "append";
           };
-          passwordCommand = "${pkgs.busybox}/bin/cat " + passwordPath;
-          smtp.host = smtp;
-          userName = user;
+          passwordCommand = "${pkgs.busybox}/bin/cat " + x.passwordPath;
+          smtp.host = x.smtp;
+          userName = x.user;
         };
       }) cfg.accounts;
     };
