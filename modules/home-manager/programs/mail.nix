@@ -65,6 +65,7 @@ in {
 
     accounts.email = {
       accounts = hm.dag.map (x: {
+          inherit x;
           x.dagName = {
             address = x.address;
             imap.host = x.imap;
