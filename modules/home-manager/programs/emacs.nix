@@ -20,7 +20,7 @@ in {
               owner = "fxttr";
               repo = "lsp-bridge";
               rev = "3b7f612948884f8583eb1e89e0dde2d4fcc53f44";
-              sha256 = "sha256-vbSVGPFBjAp4VRbJc6a2W0d2IqOusNa+rk4X6jRcjRI=";
+              sha256 = "sha256-vbSVGPFBjAp4VRbJc6a2W0d2IqOusNu+rk4X6jRcjRI=";
             };
           }))
         ] ++
