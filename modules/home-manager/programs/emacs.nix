@@ -15,6 +15,7 @@ in {
       extraPackages = (epkgs:
         [
           epkgs.agda2-mode
+	  epkgs.lsp-bridge
         ] ++
         (with pkgs; [
           pkgs.mu
