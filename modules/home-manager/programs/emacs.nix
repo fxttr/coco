@@ -22,7 +22,7 @@ in {
               inherit rev;
               sha256 = "sha256-vbSVGPFBjAp4VRbJc6a2W0d2IqOusNa+rk4X6jRcjRI=";
             };
-          })
+          }))
         ] ++
         (with pkgs; [
           pkgs.mu
