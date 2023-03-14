@@ -41,6 +41,7 @@ in {
           dashboard
           markdown-mode
           ace-window
+          ace-jump-mode
           yasnippet
           direnv
           beacon

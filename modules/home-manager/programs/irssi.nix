@@ -11,7 +11,7 @@ in {
       description = "Set the nick and name variable";
       default = "";
   };
-
+  
   config = mkIf cfg.enable {
   programs.irssi = {
     enable = true;
