@@ -29,6 +29,7 @@ in {
 
       sessionVariables = {
         GPG_TTY = "$(tty)";
+        _JAVA_AWT_WM_NONREPARENTING = "1";
       };
 
       shellAliases = {
