@@ -15,6 +15,14 @@ in {
       extraPackages = (epkgs:
         [
           epkgs.agda2-mode
+	        (epkgs.lsp-bridge.overrideAttrs (old: {
+            src = pkgs.fetchFromGitHub {
+              owner = "fxttr";
+              repo = "lsp-bridge";
+              rev = "3b7f612948884f8583eb1e89e0dde2d4fcc53f44";
+              sha256 = "sha256-2W6ADB+GcJYlQg+8m4UqQMXK6zyQ1OlwpYzG0ZiL758=";
+            };
+          }))
         ] ++
         (with pkgs; [
           pkgs.mu
@@ -33,6 +41,7 @@ in {
           dashboard
           markdown-mode
           ace-window
+          ace-jump-mode
           yasnippet
           direnv
           beacon
