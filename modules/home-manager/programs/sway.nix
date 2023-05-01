@@ -21,26 +21,23 @@ in
 
   config = mkIf cfg.enable
     {
+      services.swayidle = {
+        enable = true;
+        timeouts = [
+          { timeout = 300; command = "swaylock -f -i ${wallpaper}"; }
+          { timeout = 600; command = "swaymsg \"output * dpms off\""; resumeCommand = "swaymsg \"output * dpms on\""; }
+        ];
+        events = [
+          { event = "before-sleep"; command = "swaylock -f -i ${wallpaper}"; }
+        ];
+      };
+
       wayland.windowManager.sway = {
         enable = true;
         config = rec {
           modifier = "Mod4";
           terminal = "alacritty";
           fonts = fontConf;
-
-          startup = [
-            {
-              command =
-                let lockCmd = "swaylock -f -i ${wallpaper}";
-                in
-                ''swayidle -w \
-              timeout 600 ${lockCmd} \
-              timeout 1200 'swaymsg "output * dpms off"' \
-                      resume 'swaymsg "output * dpms on"' \
-                     before-sleep ${lockCmd}
-              '';
-            }
-          ];
 
           input."type:keyboard".xkb_layout = "de";
 
