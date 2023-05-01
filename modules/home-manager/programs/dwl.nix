@@ -13,5 +13,5 @@ in
       wayland.windowManager.dwl = {
         enable = true;
       };
-    }
+    };
 }
