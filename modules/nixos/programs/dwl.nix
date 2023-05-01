@@ -28,7 +28,7 @@ in {
       };
 
       desktopManager.default = "dwl";
-      services.xserver.desktopManager.session =
+      desktopManager.session =
         [ { manage = "desktop";
             name = "dwl";
             start = ''
