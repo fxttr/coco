@@ -16,7 +16,7 @@ in
               owner = "fxttr";
               repo = "dwl";
               rev = "eb2234c0312836824438313dbcde8bd5888ee2da";
-              sha256 = "sha256-iK6r+3XwTMPItSuLK+sex0DoDWJ9ApAfhivFGM5CF1Y=";
+              sha256 = "sha256-Jz83m+SkyGhfVsxH54dgTr2mtrsLo0R1ExZTC+NTacU=";
             };
           }))
           pkgs.alacritty
