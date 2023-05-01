@@ -1,1 +1,1 @@
-{ imports = [ ./sway.nix ./plasma.nix ]; }
+{ imports = [ ./dwl.nix ./sway.nix ./plasma.nix ]; }
