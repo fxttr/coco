@@ -19,9 +19,9 @@ in
               sha256 = "sha256-iK6r+3XwTMPItSuLK+sex0DoDWJ9ApAfhivFGM5CF1Y=";
             };
           }))
-          alacritty
-          waylock
-          bemenu
+          pkgs.alacritty
+          pkgs.waylock
+          pkgs.bemenu
           ];
       systemd.user.targets.dwl-session = {
         Unit = {
