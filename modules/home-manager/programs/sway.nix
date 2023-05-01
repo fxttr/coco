@@ -77,7 +77,7 @@ in
             };
           };
 
-          menu = "wofi --show drun --gtk-dark";
+          menu = "bemenu-run -nb #${colorscheme.dark.bg_0} -sb #${colorscheme.dark.bg_0} -sf #${colorscheme.dark.green}";
 
           output = { "*".bg = ''"${wallpaper}" fit''; };
 
