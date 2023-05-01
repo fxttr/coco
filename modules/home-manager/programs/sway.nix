@@ -24,11 +24,11 @@ in
       services.swayidle = {
         enable = true;
         timeouts = [
-          { timeout = 300; command = "swaylock -f -i ${wallpaper}"; }
-          { timeout = 600; command = "swaymsg \"output * dpms off\""; resumeCommand = "swaymsg \"output * dpms on\""; }
+          { timeout = 300; command = "${pkgs.swaylock}/bin/swaylock -f -i ${wallpaper}"; }
+          { timeout = 600; command = "${pkgs.sway}/bin/swaymsg \"output * dpms off\""; resumeCommand = "${pkgs.sway}/bin/swaymsg \"output * dpms on\""; }
         ];
         events = [
-          { event = "before-sleep"; command = "swaylock -f -i ${wallpaper}"; }
+          { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f -i ${wallpaper}"; }
         ];
       };
 
