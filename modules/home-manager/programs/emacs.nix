@@ -19,8 +19,8 @@ in {
             src = pkgs.fetchFromGitHub {
               owner = "fxttr";
               repo = "lsp-bridge";
-              rev = "d97544dff6ce8c787e6dc6eac52982afe3053a9d";
-              sha256 = "sha256-iK6r+3XwTMPItSuLK+sef0DoDWJ9ApAfhivFGM5CF1Y=";
+              rev = "edf7a5721744adbaee958b7b9b33019fc2a47a77";
+              sha256 = "sha256-iK6r+3XwTMPItSuLK+sef0DoDWJ9ApAfhivFXM5CF1Y=";
             };
           }))
         ] ++
