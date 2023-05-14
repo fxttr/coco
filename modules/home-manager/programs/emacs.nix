@@ -51,6 +51,9 @@ in {
           flycheck-rust
           cargo
           lsp-mode
+          lsp-ui
+          lsp-ivy
+          company-lsp
           geiser
           magit
         ]));
