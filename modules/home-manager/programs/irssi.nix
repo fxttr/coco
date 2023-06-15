@@ -36,7 +36,7 @@ in {
           nick = "fx";
           name = "fx";
           server = {
-            address = "wolf.furnet.org";
+            address = "irc.furnet.org";
             port = 6697;
             ssl = {
               enable = true;
