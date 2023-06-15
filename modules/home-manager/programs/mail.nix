@@ -41,7 +41,7 @@ let
 in {
   options.coco.mail.enable = mkEnableOption "Install and configure tools for mail usage";
   options.coco.mail.accounts = mkOption {
-    type = hm.types.listOrDagOf accountModule;
+    type = hm.types.DagOf accountModule;
     default = {};
     example = literalExpression ''
             "uni" = {
