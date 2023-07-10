@@ -35,7 +35,7 @@ in {
       shellAliases = {
         ll = "ls -l";
         nix-search = "nix search nixpkgs";
-        nbuild = "doas nixos-rebuild switch --flake .";
+        nbuild = "sudo nixos-rebuild switch --flake .";
         hbuild = "home-manager switch --flake .";
       };
     };
