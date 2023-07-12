@@ -38,7 +38,7 @@ in {
         lightdm.enable = true;
       };
 
-      layout = "us-intl";
+      layout = "us";
     };
   };
 }

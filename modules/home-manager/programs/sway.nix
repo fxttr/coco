@@ -39,7 +39,7 @@ in
           terminal = "alacritty";
           fonts = fontConf;
 
-          input."type:keyboard".xkb_layout = "us-intl";
+          input."type:keyboard".xkb_layout = "us";
 
           bars = [{ command = "waybar"; }];
 
