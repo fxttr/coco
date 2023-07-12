@@ -38,7 +38,7 @@ in {
         lightdm.enable = true;
       };
 
-      layout = "de";
+      layout = "us-acentos";
     };
   };
 }
