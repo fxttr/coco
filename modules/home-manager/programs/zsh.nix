@@ -10,7 +10,7 @@ in {
   config = mkIf cfg.enable {
     programs.zsh = {
       enable = true;
-      enableSyntaxHighlighting = true;
+      syntaxHighlighting.enable = true;
       autocd = true;
       enableCompletion = true;
 

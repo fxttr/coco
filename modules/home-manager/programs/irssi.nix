@@ -30,6 +30,23 @@ in {
             nixos.autoJoin = true;
           };
         };
+
+        furnet = {
+          type = "IRC";
+          nick = "fx";
+          name = "fx";
+          server = {
+            address = "irc.furnet.org";
+            port = 6697;
+            ssl = {
+              enable = true;
+              verify = false;
+            };
+          };
+          channels = {
+            pool.autoJoin = true;
+          };
+        };
       };
   };
 };

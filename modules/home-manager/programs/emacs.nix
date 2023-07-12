@@ -13,17 +13,6 @@ in {
       enable = true;
 
       extraPackages = (epkgs:
-        [
-          epkgs.agda2-mode
-	        (epkgs.lsp-bridge.overrideAttrs (old: {
-            src = pkgs.fetchFromGitHub {
-              owner = "fxttr";
-              repo = "lsp-bridge";
-              rev = "d97544dff6ce8c787e6dc6eac52982afe3053a9d";
-              sha256 = "sha256-iK6r+3XwTMPItSuLK+sef0DoDWJ9ApAfhivFGM5CF1Y=";
-            };
-          }))
-        ] ++
         (with pkgs; [
           pkgs.mu
         ]) ++
@@ -53,17 +42,17 @@ in {
           posframe
           treemacs
           treemacs-projectile
-          idris-mode
           slime
           slime-company
           nasm-mode
-          tuareg
-          merlin
           utop
           rust-mode
           rustic
           flycheck-rust
           cargo
+          lsp-mode
+          lsp-ui
+          lsp-ivy
           geiser
           magit
         ]));
