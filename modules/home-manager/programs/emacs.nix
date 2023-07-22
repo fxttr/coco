@@ -32,6 +32,7 @@ in {
           ace-window
           ace-jump-mode
           yasnippet
+          which-key
           direnv
           beacon
           cmake-mode
