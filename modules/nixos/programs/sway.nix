@@ -39,6 +39,7 @@ in {
       };
 
       layout = "us";
+      xkbVariant = "altgr-intl";
     };
   };
 }
