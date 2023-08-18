@@ -21,6 +21,7 @@ in {
       ];
       extraSessionCommands = ''
         			export SDL_VIDEODRIVER=wayland
+              export CLUTTER_BACKEND=wayland
         			export QT_QPA_PLATFORM=wayland
               export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
               export _JAVA_AWT_WM_NONREPARENTING=1
@@ -43,7 +44,7 @@ in {
           {
             manage = "desktop";
             name = "SwayUnstable";
-            start = ''sway --unsupported-gpu'';
+            start = ''exec sway --unsupported-gpu'';
           }
         ];
       };
