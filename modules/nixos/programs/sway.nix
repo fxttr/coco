@@ -39,7 +39,7 @@ in {
         session = [
           {
             manage = "desktop";
-            name = "Sway Unstable";
+            name = "SwayUnstable";
             start = ''sway --unsupported-gpu'';
           }
         ];
