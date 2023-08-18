@@ -41,7 +41,7 @@ in {
           manage = "desktop";
           name = "Sway Unstable";
           start = ''sway --unsupported-gpu'';
-        }
+        };
       };
 
       layout = "us";
