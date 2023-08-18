@@ -37,11 +37,12 @@ in {
       displayManager = {
         lightdm.enable = true;
         session = [
-        {
-          manage = "desktop";
-          name = "Sway Unstable";
-          start = ''sway --unsupported-gpu'';
-        };
+          {
+            manage = "desktop";
+            name = "Sway Unstable";
+            start = ''sway --unsupported-gpu'';
+          }
+        ];
       };
 
       layout = "us";
