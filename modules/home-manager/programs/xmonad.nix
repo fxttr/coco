@@ -13,7 +13,7 @@ in
       xsession.windowManager.xmonad = {
         enable = true;
         enableContribAndExtras = true;
-        config = pkgs.writeText "config.hs" (builtins.readFile ./programs/xmonad/config.hs);
+        config = pkgs.writeText "config.hs" (builtins.readFile ./xmonad/config.hs);
       };
     };
 }
