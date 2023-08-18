@@ -177,10 +177,6 @@ keybindings conf@XConfig {XMonad.modMask = modm} = M.fromList $
     , ((modm                , xK_period  ), nextWS')
     , ((modm                , xK_comma   ), prevWS')
     , ((modm .|. shiftMask  , xK_F4      ), removeWorkspace)
-    , ((modm .|. controlMask, xK_s       ), runScratchpadApp spotify)
-    , ((modm .|. controlMask, xK_e       ), spawn "emacs")
-    , ((modm .|. controlMask, xK_f       ), spawn "firefox")
-    , ((modm .|. controlMask, xK_p       ), runScratchpadApp pavuctrl)
     ] ++ switchWsById
  where
   switchWsById =
@@ -247,22 +243,6 @@ myLayout =
 
      -- Fullscreen
      fullScreenToggle = mkToggle (single NBFULL)
-
-------------------------------------------------------------------------
--- Window rules:
-
--- Execute arbitrary actions and WindowSet manipulations when managing
--- a new window. You can use this to, for example, always float a
--- particular program, or have a client always appear on a particular
--- workspace.
---
--- To find the property name associated with a program, use
--- > xprop | grep WM_CLASS
--- and click on the client you're interested in.
---
--- To match on the WM_NAME, you can use 'title' in the same way that
--- 'className' and 'resource' are used below.
---
 
 type AppName      = String
 type AppTitle     = String
@@ -357,8 +337,8 @@ projects =
             , projectStartHook = Nothing
             }
   , Project { projectName      = sysWs
-            , projectDirectory = "/home/florian/nixos/"
-            , projectStartHook = Just . spawn $ myTerminal <> " -e sudo su"
+            , projectDirectory = "~/Devel/nixos"
+            , projectStartHook = Nothing
             }
   ]
 

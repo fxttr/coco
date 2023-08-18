@@ -8,19 +8,6 @@ in {
   options.coco.xmonad.enable = mkEnableOption "Install and configure xmonad";
 
   config = mkIf cfg.enable {
-    #programs.xmonad = {
-    #  enable = true;
-    #  extraPackages = with pkgs; [
-    #    xmobar
-    #    dmenu
-    #    rxvt-unicode
-    #    feh
-    #    dunst
-    #    mupdf
-    #    ranger
-    #  ];
-    #};
-
     services.xserver = {
       enable = true;
 
