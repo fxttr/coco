@@ -12,7 +12,7 @@ in {
       enable = true;
       wrapperFeatures.gtk = true;
       extraPackages = with pkgs; [
-        xmobarc
+        xmobar
         dmenu
         rxvt-unicode
         feh
