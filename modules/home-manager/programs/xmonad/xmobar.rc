@@ -1,0 +1,18 @@
+Config { font = "xft:Source Code Pro:size=9:regular:antialias=true"
+        , overrideRedirect = False
+        , borderColor = "#282A36"
+        , border = TopB
+        , bgColor = "#282A36"
+        , fgColor = "#f8f8f2"
+        , position = TopW L 100 
+        , commands = [  Run Network "enp3s0" ["-L","0","-H","32","--normal","#98c379","--high","#e06c75"] 10
+                        , Run Cpu ["-L","3","-H","50","--normal","#98c379","--high","#e06c75"] 10
+                        , Run Memory ["-t","Mem: <usedratio>%"] 10
+                        , Run Com "uname" ["-s","-r"] "" 36000
+                        , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                        , Run StdinReader
+                        ]
+        , sepChar = "%" 
+        , alignSep = "}{"
+        , template = "%StdinReader% }{[ %enp3s0% ] | %cpu% | %memory% | <fc=#ff79c6>%date%</fc> | %uname%"
+        }
