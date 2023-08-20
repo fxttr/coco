@@ -96,8 +96,8 @@ import Data.Char (isSpace)
 
 main :: IO ()
 main = do
-  spawn "feh --bg-fill /home/florian/Pictures/Wallpaper/DesertPeak/DesertPeak-1.jpg"
-  xmproc <- spawnPipe "xmobar /persist/etc/nixos/programs/xmonad/xmobar.rc"
+  spawn "feh --bg-fill $(nix eval github:fxttr/coco#nixosModules.home-manager)/programs/xmonad/wallpaper.png"
+  xmproc <- spawnPipe "xmobar $(nix eval github:fxttr/coco#nixosModules.home-manager)/programs/xmonad/xmobar.rc"
   startUp xmproc
 
 startUp xm = xmonad . docks . ewmh . dynProjects . urgencyHook $ def
@@ -138,8 +138,8 @@ instance UrgencyHook LibNotifyUrgencyHook where
 -- Key bindings. Add, modify or remove key bindings here.
 --
 
-myTerminal   = "urxvt"
-fileManager  = "urxvt -e ranger"
+myTerminal   = "alacritty"
+fileManager  = "alacritty -e ranger"
 appLauncher  = "dmenu_run"
 screenLocker = "multilockscreen -l dim"
 playerctl c  = "playerctl --player=spotify,%any " <> c
