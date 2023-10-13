@@ -11,8 +11,9 @@ in {
     programs.dconf.enable = true;
     services.xserver = {
       enable = true;
-
-      layout = "de";
+      
+      layout = "us";
+      xkbVariant = "altgr-intl";
 
       displayManager.sddm.enable = true;
       desktopManager.plasma5 = {
