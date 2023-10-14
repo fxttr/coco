@@ -34,7 +34,6 @@ in {
           tali # poker game
           iagno # go game
           hitori # sudoku game
-          ato
         ]);
       };
     };
