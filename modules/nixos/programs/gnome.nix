@@ -18,7 +18,10 @@ in {
       displayManager.gdm.enable = true;
       desktopManager.gnome= {
         enable = true;
-        excludePackages = (with pkgs; [
+      };
+    };
+
+    environment.gnome.excludePackages = (with pkgs; [
           gnome-photos
           gnome-tour
         ]) ++ (with pkgs.gnome; [
@@ -35,7 +38,5 @@ in {
           iagno # go game
           hitori # sudoku game
         ]);
-      };
-    };
   };
 }
