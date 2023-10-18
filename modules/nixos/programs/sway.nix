@@ -27,7 +27,6 @@ in {
               export _JAVA_AWT_WM_NONREPARENTING=1
               export MOZ_ENABLE_WAYLAND=1
               export _JAVA_AWT_WM_NONREPARENTING=1
-              export WLR_RENDERER=vulkan
               export WLR_NO_HARDWARE_CURSORS=1
               export XWAYLAND_NO_GLAMOR=1
         		'';
