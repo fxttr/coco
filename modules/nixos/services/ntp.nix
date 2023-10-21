@@ -8,8 +8,6 @@ in {
   options.coco.ntp.enable = mkEnableOption "Install and configure ntp";
 
   config = mkIf cfg.enable {
-    services.openntpd.enable = true;
-
     networking.timeServers = [
       "0.de.pool.ntp.org"
       "1.de.pool.ntp.org"

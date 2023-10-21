@@ -14,9 +14,9 @@ in
 {
   options.coco.sway.enable = mkEnableOption "Install and configure sway";
   options.coco.sway.wallpaper = mkOption {
-      type = types.str;
-      description = "Set the wallpaper";
-      default = "";
+    type = types.str;
+    description = "Set the wallpaper";
+    default = "";
   };
 
   config = mkIf cfg.enable

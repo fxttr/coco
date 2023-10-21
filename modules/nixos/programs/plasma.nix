@@ -11,7 +11,7 @@ in {
     programs.dconf.enable = true;
     services.xserver = {
       enable = true;
-      
+
       layout = "us";
       xkbVariant = "altgr-intl";
 

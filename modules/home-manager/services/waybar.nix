@@ -9,9 +9,9 @@ in
 {
   options.coco.waybar.enable = mkEnableOption "Install and configure waybar";
   options.coco.waybar.mobile = mkOption {
-      type = types.bool;
-      description = "Enable a smaller version of waybar for mobile devices";
-      default = false;
+    type = types.bool;
+    description = "Enable a smaller version of waybar for mobile devices";
+    default = false;
   };
 
   config = mkIf cfg.enable {
@@ -32,37 +32,38 @@ in
             "clock#3"
             "custom/right-arrow-dark"
           ];
-          modules-right = if cfg.mobile then [
-            "custom/left-arrow-dark"
-            "network"
-            "custom/left-arrow-light"
-            "custom/left-arrow-dark"
-            "memory"
-            "custom/left-arrow-light"
-            "custom/left-arrow-dark"
-            "cpu"
-            "custom/left-arrow-light"
-            "custom/left-arrow-dark"
-            "battery"
-            "custom/left-arrow-light"
-            "custom/left-arrow-dark"
-            "tray"
-          ] else [
-            "custom/left-arrow-dark"
-            "network"
-            "custom/left-arrow-light"
-            "custom/left-arrow-dark"
-            "memory"
-            "custom/left-arrow-light"
-            "custom/left-arrow-dark"
-            "cpu"
-            "custom/left-arrow-light"
-            "custom/left-arrow-dark"
-            "disk"
-            "custom/left-arrow-light"
-            "custom/left-arrow-dark"
-            "tray"
-          ];
+          modules-right =
+            if cfg.mobile then [
+              "custom/left-arrow-dark"
+              "network"
+              "custom/left-arrow-light"
+              "custom/left-arrow-dark"
+              "memory"
+              "custom/left-arrow-light"
+              "custom/left-arrow-dark"
+              "cpu"
+              "custom/left-arrow-light"
+              "custom/left-arrow-dark"
+              "battery"
+              "custom/left-arrow-light"
+              "custom/left-arrow-dark"
+              "tray"
+            ] else [
+              "custom/left-arrow-dark"
+              "network"
+              "custom/left-arrow-light"
+              "custom/left-arrow-dark"
+              "memory"
+              "custom/left-arrow-light"
+              "custom/left-arrow-dark"
+              "cpu"
+              "custom/left-arrow-light"
+              "custom/left-arrow-dark"
+              "disk"
+              "custom/left-arrow-light"
+              "custom/left-arrow-dark"
+              "tray"
+            ];
           "sway/workspaces" = {
             all-outputs = true;
             disable-scroll = true;
