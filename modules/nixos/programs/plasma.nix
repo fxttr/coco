@@ -8,7 +8,15 @@ in {
   options.coco.plasma.enable = mkEnableOption "Install and configure plasma";
 
   config = mkIf cfg.enable {
+    programs.kdeconnect.enable = true;
     programs.dconf.enable = true;
+    environment.systemPackages = with pkgs; [
+        libsForQt5.qtstyleplugin-kvantum
+     ];
+    environment.variables = {
+       "QT_STYLE_OVERRIDE"="kvantum";
+    };
+
     services.xserver = {
       enable = true;
 
@@ -19,9 +27,7 @@ in {
       desktopManager.plasma5 = {
         enable = true;
         excludePackages = with pkgs.libsForQt5; [
-          elisa
           khelpcenter
-          plasma-browser-integration
         ];
       };
     };
