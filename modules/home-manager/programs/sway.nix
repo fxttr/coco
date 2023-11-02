@@ -34,6 +34,10 @@ in
 
       wayland.windowManager.sway = {
         enable = true;
+        systemd.enable = true;
+        extraOptions = [
+           "--unsupported-gpu" 
+        ];
         config = rec {
           modifier = "Mod4";
           terminal = "alacritty";
