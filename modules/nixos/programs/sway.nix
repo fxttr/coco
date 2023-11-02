@@ -38,16 +38,5 @@ in {
     };
 
     programs.waybar.enable = true;
-
-    services.xserver = {
-      enable = true;
-
-      displayManager = {
-        lightdm.enable = true;
-      };
-
-      layout = "us";
-      xkbVariant = "altgr-intl";
-    };
   };
 }
