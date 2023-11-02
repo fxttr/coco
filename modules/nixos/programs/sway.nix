@@ -18,6 +18,7 @@ in {
         mako
         alacritty
         bemenu
+        ranger
       ];
       extraSessionCommands = ''
         			export SDL_VIDEODRIVER=wayland
