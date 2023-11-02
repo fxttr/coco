@@ -20,6 +20,9 @@ in {
         bemenu
         ranger
       ];
+      extraOptions = [
+	"--unsupported-gpu"
+      ];
       extraSessionCommands = ''
       	      export SDL_VIDEODRIVER=wayland
               export CLUTTER_BACKEND=wayland
