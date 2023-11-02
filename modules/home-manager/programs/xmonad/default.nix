@@ -9,8 +9,13 @@ let
     ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
   '';
 
+  polybarOpts = ''
+    ${pkgs.pasystray}/bin/pasystray &
+    ${pkgs.blueman}/bin/blueman-applet &
+  '';
+
   hdmiExtra = lib.optionalString hdmiOn ''
-    ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --rotate left
+    ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off
   '';
 in
 {
