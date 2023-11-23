@@ -4,45 +4,11 @@ with lib;
 
 let cfg = config.coco.theme;
 
-in {
+in
+{
   options.coco.theme.enable = mkEnableOption "Install and configure GTK themes";
 
   config = mkIf cfg.enable {
-    dconf = {
-      settings = {
-        "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
-          enable-hot-corners = false;
-        };
-        "org/gnome/shell" = {
-          favorite-apps = [
-            "firefox.desktop"
-            "org.gnome.Nautilus.desktop"
-            "code.desktop"
-            "obsidian.desktop"
-            "org.gnome.Terminal.desktop"
-            "spotify.desktop"
-          ];
-
-          disable-user-extensions = false;
-          enabled-extensions = [
-            "user-theme@gnome-shell-extensions.gcampax.github.com"
-            "dash-to-panel@jderose9.github.com"
-          ];
-        };
-
-        "org/gnome/shell/extensions/user-theme" = {
-          name = "palenight";
-        };
-      };
-    };
-
-    home.packages = with pkgs; [
-      gnomeExtensions.user-themes
-      gnomeExtensions.dash-to-panel
-      palenight-theme
-    ];
-
     gtk = {
       enable = true;
 
