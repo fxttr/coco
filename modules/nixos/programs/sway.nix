@@ -36,7 +36,5 @@ in {
                       export XWAYLAND_NO_GLAMOR=1
                 		'';
     };
-
-    programs.waybar.enable = true;
   };
 }

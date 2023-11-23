@@ -1,1 +1,1 @@
-{ imports = [ ./dwl.nix ./sway.nix ./plasma.nix ./gnome.nix ]; }
+{ imports = [ ./dwl.nix ./sway.nix ./plasma.nix ./gnome.nix ./mate.nix ]; }
