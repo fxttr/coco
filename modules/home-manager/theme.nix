@@ -8,8 +8,7 @@ in {
   options.coco.theme.enable = mkEnableOption "Install and configure GTK themes";
 
   config = mkIf cfg.enable {
-    programs.dconf = {
-      enable = true;
+    dconf = {
       settings = {
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
