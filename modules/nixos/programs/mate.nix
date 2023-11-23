@@ -19,11 +19,6 @@ in {
       displayManager.lightdm.enable = true;
       desktopManager.mate = {
         enable = true;
-        session = {
-          windowManager = "marco";
-          desktopName = "MATE";
-          desktopSession = "mate";
-        };
       };
     };
   };
