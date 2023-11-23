@@ -5,7 +5,7 @@ with lib;
 let cfg = config.coco.theme;
 
 in {
-  options.coco.gnome.enable = mkEnableOption "Install and configure gnome";
+  options.coco.theme.enable = mkEnableOption "Install and configure GTK themes";
 
   config = mkIf cfg.enable {
     programs.dconf = {
