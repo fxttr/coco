@@ -29,10 +29,10 @@ in {
             "user-theme@gnome-shell-extensions.gcampax.github.com"
             "dash-to-panel@jderose9.github.com"
           ];
+        };
 
-          "org/gnome/shell/extensions/user-theme" = {
-            name = lib.hm.gvariant.mkString "palenight";
-          };
+        "org/gnome/shell/extensions/user-theme" = {
+          name = "palenight";
         };
       };
     };
