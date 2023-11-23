@@ -31,7 +31,7 @@ in {
           ];
 
           "org/gnome/shell/extensions/user-theme" = {
-            name = "palenight";
+            name = lib.hm.gvariant.mkVariant "palenight";
           };
         };
       };
