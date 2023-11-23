@@ -2,11 +2,11 @@
 
 with lib;
 
-let cfg = config.coco.dwl;
+let cfg = config.coco.swm;
 
 in
 {
-  options.coco.dwl.enable = mkEnableOption "Install dwl";
+  options.coco.swm.enable = mkEnableOption "Install swm";
 
   config = mkIf cfg.enable {
     programs.waybar.enable = true;
@@ -21,14 +21,9 @@ in
       displayManager.session =
         [{
           manage = "desktop";
-          name = "dwl";
+          name = "swm";
           start = ''
-            export SDL_VIDEODRIVER=wayland
-            export QT_QPA_PLATFORM=wayland
-            export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-            export _JAVA_AWT_WM_NONREPARENTING=1
-            export MOZ_ENABLE_WAYLAND=1
-            dwl
+            swm
           '';
         }];
 

@@ -4,7 +4,8 @@ with lib;
 
 let cfg = config.coco.gnome;
 
-in {
+in
+{
   options.coco.gnome.enable = mkEnableOption "Install and configure gnome";
 
   config = mkIf cfg.enable {
@@ -40,6 +41,6 @@ in {
     ]);
     environment.systemPackages = with pkgs; [
       gnome.gnome-tweaks
-    ]
-      };
-  }
+    ];
+  };
+}
