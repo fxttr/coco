@@ -21,9 +21,14 @@ in
       displayManager.session =
         [{
           manage = "desktop";
-          name = "swm";
+          name = "Swm";
           start = ''
-            swm
+            ${(pkgs.fetchFromGitHub {
+              owner = "fxttr";
+              repo = "swm";
+              rev = "2578e270c7f982364e2f553393041c58593647f4";
+              sha256 = "sha256-kmnssxJ4L+OgbroeSWLRSErpGEDkQfEdZBUDOq3DTaI=";
+            }).defaultPackage.x86_64-linux}/bin/swm
           '';
         }];
 

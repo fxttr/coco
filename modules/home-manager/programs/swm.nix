@@ -4,12 +4,6 @@ with lib;
 
 let
   cfg = config.coco.swm;
-  swm = (pkgs.fetchFromGitHub {
-    owner = "fxttr";
-    repo = "swm";
-    rev = "1711b7699aa1ae633fe415d86d6c8560bc2d6cf4";
-    sha256 = "sha256-kmnssxJ4L+OgbroeSWLRSErpGEDkQfEdZBUDOq3DTaI=";
-  });
   stc = (pkgs.fetchFromGitHub {
     owner = "fxttr";
     repo = "stc";
@@ -23,9 +17,9 @@ in
   config = mkIf cfg.enable
     {
       home.packages = [
-        swm
-        stc
+        stc.defaultPackage.x86_64-linux
         pkgs.feh
+        pkgs.ranger
         pkgs.dmenu
       ];
     };
