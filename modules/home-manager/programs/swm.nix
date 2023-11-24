@@ -8,7 +8,7 @@ let
     owner = "fxttr";
     repo = "stc";
     rev = "f65a5e19e2b0ff872ed27c0b3f90f320c17f1a5e";
-    sha256 = "sha256-Ly8FNYp0lezd7rqkbldmnbImexrdla5ZfmIVXyOwwEU=";
+    sha256 = "sha256-IM9k7p9zDZr6lHZ0BlDufERKiLGWYsZ+jkBa9KBEqkc=";
   });
 in
 {
