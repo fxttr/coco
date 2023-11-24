@@ -40,7 +40,24 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "xmonad": "xmonad"
+      }
+    },
+    "xmonad": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1672605774,
+        "narHash": "sha256-smORx5YOWtzM0moUgFoEon3PEnUv53hxxZ3lEDuby1I=",
+        "owner": "fxttr",
+        "repo": "xmonad-cfg",
+        "rev": "56da3532bb4af568f25e4f32e067c51e569f174f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fxttr",
+        "repo": "xmonad-cfg",
+        "type": "github"
       }
     }
   },
