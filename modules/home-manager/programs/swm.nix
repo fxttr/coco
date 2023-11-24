@@ -7,7 +7,7 @@ let
   stc = (pkgs.fetchFromGitHub {
     owner = "fxttr";
     repo = "stc";
-    rev = "a128cc725efc5ef4cec7a4c72b156584f80857af";
+    rev = "f65a5e19e2b0ff872ed27c0b3f90f320c17f1a5e";
     sha256 = "sha256-Ly8FNYp0lezd7rqkbldmnbImexrdla5ZfmIVXyOwwEU=";
   });
 in
