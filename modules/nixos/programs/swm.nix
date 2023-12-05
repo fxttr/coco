@@ -8,7 +8,7 @@ let
     owner = "fxttr";
     repo = "swm";
     rev = "2578e270c7f982364e2f553393041c58593647f4";
-    sha256 = "sha256-GsEXbTl8peDikw89QKjHNJwa4oXOYHxmw1r7Fl7fI5k=";
+    sha256 = "sha256-GsEXbTl8peDiFw89QKjHNJwa4oXOYHxmw1r7Fl7fI5k=";
   });
 in
 {
