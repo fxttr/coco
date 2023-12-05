@@ -7,10 +7,6 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    xmonad = {
-      url = "github:fxttr/xmonad-cfg";
-      flake = false;
-    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:

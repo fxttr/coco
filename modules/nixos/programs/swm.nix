@@ -10,6 +10,7 @@ let
     rev = "2578e270c7f982364e2f553393041c58593647f4";
     sha256 = "sha256-GsEXbTl8peDiFw89QKjHNJwa4oXOYHxmw1r7Fl7fI5k=";
   })}/default.nix'';
+
 in
 {
   options.coco.swm.enable = mkEnableOption "Install swm";
@@ -25,7 +26,7 @@ in
       displayManager.session =
         [{
           manage = "desktop";
-          name = "Swm";
+          name = "swm";
           start = ''
             ${(pkgs.callPackage swm { })}/bin/swm
           '';
