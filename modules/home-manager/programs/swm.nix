@@ -4,12 +4,20 @@ with lib;
 
 let
   cfg = config.coco.swm;
+
   stc = ''${(pkgs.fetchFromGitHub {
     owner = "fxttr";
     repo = "stc";
     rev = "f65a5e19e2b0ff872ed27c0b3f90f320c17f1a5e";
     sha256 = "sha256-IM9k7p9zDZr6lHZ0BlDufERKiLGWYsZ+jkBa9KBEqkc=";
   })}/default.nix'';
+
+  symo = (pkgs.fetchFromGitHub {
+    owner = "fxttr";
+    repo = "symo";
+    rev = "257cd74cd6ce93ce47c656dc37fdec8a4f093d8b";
+    sha256 = "sha256-cxZynbKESIE8OLyMssMm5Rs9fcXTHtUWUWG4m/rdbeo=";
+  });
 
   extra = ''
     set +x
@@ -18,6 +26,11 @@ let
     ${pkgs.xcape}/bin/xcape -e "Hyper_L=Tab;Hyper_R=backslash"
     ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
     ${pkgs.feh}/bin/feh --bg-fill ${inputs.artwork}/wallpapers/nix-wallpaper-stripes.png
+
+    # Fix for Java apps
+    export _JAVA_AWT_WM_NONREPARENTING=1
+    ${pkgs.wmname}/bin/wmname "LG3D"
+    ${symo.defaultPackage}/bin/symo &
   '';
 in
 {
