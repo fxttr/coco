@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700814205,
-        "narHash": "sha256-lWqDPKHRbQfi+zNIivf031BUeyciVOtwCwTjyrhDB5g=",
+        "lastModified": 1702195709,
+        "narHash": "sha256-+zRjWkm5rKqQ57PuLZ3JF3xi3vPMiOJzItb1m/43Cq4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "aeb2232d7a32530d3448318790534d196bf9427a",
+        "rev": "6761b8188b860f374b457eddfdb05c82eef9752f",
         "type": "github"
       },
       "original": {
@@ -23,11 +23,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1701626906,
-        "narHash": "sha256-ugr1QyzzwNk505ICE4VMQzonHQ9QS5W33xF2FXzFQ00=",
+        "lastModified": 1702272962,
+        "narHash": "sha256-D+zHwkwPc6oYQ4G3A1HuadopqRwUY/JkMwHz1YF7j4Q=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0c6d8c783336a59f4c59d4a6daed6ab269c4b361",
+        "rev": "e97b3e4186bcadf0ef1b6be22b8558eab1cdeb5d",
         "type": "github"
       },
       "original": {
@@ -40,24 +40,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "xmonad": "xmonad"
-      }
-    },
-    "xmonad": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1701145859,
-        "narHash": "sha256-ci9LPhH5B4Wz/vm8IqCLiZAKJ9S4NlobnMkSJVDw1G4=",
-        "owner": "fxttr",
-        "repo": "xmonad-cfg",
-        "rev": "7a0b8092b4e10a979356149d89f09d6dbbdf6609",
-        "type": "github"
-      },
-      "original": {
-        "owner": "fxttr",
-        "repo": "xmonad-cfg",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
