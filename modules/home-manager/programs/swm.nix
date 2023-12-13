@@ -30,7 +30,6 @@ let
     # Fix for Java apps
     export _JAVA_AWT_WM_NONREPARENTING=1
     ${pkgs.wmname}/bin/wmname "LG3D"
-    ${symo.defaultPackage}/bin/symo &
   '';
 in
 {
