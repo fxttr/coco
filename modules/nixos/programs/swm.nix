@@ -7,8 +7,8 @@ let
   swm = ''${(pkgs.fetchFromGitHub {
     owner = "fxttr";
     repo = "swm";
-    rev = "2578e270c7f982364e2f553393041c58593647f4";
-    sha256 = "sha256-GsEXbTl8peDiFw89QKjHNJwa4oXOYHxmw1r7Fl7fI5k=";
+    rev = "464920833b2542549e1961991a734fb9ec7e0ab8";
+    sha256 = "sha256-FaUNjGsEMshFDWxtigdvJBRRCVaQIhUwDgH5BcwYTps=";
   })}/default.nix'';
 
 in
