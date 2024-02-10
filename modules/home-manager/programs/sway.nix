@@ -13,6 +13,7 @@ let
 in
 {
   options.coco.sway.enable = mkEnableOption "Install and configure sway";
+
   options.coco.sway.wallpaper = mkOption {
     type = types.str;
     description = "Set the wallpaper";
@@ -35,9 +36,7 @@ in
       wayland.windowManager.sway = {
         enable = true;
         systemd.enable = true;
-        extraOptions = [
-           "--unsupported-gpu" 
-        ];
+
         config = rec {
           modifier = "Mod4";
           terminal = "alacritty";

@@ -8,9 +8,28 @@ in {
   options.coco.sway.enable = mkEnableOption "Install and configure sway";
 
   config = mkIf cfg.enable {
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+
+    services.xserver = {
+      enable = true;
+
+      displayManager = {
+        lightdm.enable = true;
+      };
+      
+      layout = "us";
+      xkbVariant = "altgr-intl";
+    };
+
     programs.sway = {
       enable = true;
+
       wrapperFeatures.gtk = true;
+
       extraPackages = with pkgs; [
         swaylock
         swayidle
@@ -20,9 +39,7 @@ in {
         bemenu
         ranger
       ];
-      extraOptions = [
-        "--unsupported-gpu"
-      ];
+
       extraSessionCommands = ''
               	      export SDL_VIDEODRIVER=wayland
                       export CLUTTER_BACKEND=wayland
