@@ -32,8 +32,10 @@ in
           '';
         }];
 
-      layout = "us";
-      xkbVariant = "altgr-intl";
+      xkb = {
+        layout = "us";
+        variant = "altgr-intl";
+      };
     };
 
   };

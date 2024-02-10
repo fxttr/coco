@@ -20,9 +20,11 @@ in {
       displayManager = {
         lightdm.enable = true;
       };
-      
-      layout = "us";
-      xkbVariant = "altgr-intl";
+
+      xkb = {
+        layout = "us";
+        variant = "altgr-intl";
+      };
     };
 
     programs.sway = {

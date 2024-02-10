@@ -13,9 +13,11 @@ in
     services.xserver = {
       enable = true;
 
-      layout = "us";
-      xkbVariant = "altgr-intl";
-
+      xkb = {
+        layout = "us";
+        variant = "altgr-intl";
+      };
+      
       displayManager.gdm.enable = true;
       desktopManager.gnome = {
         enable = true;

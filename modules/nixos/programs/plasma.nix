@@ -11,17 +11,19 @@ in {
     programs.kdeconnect.enable = true;
     programs.dconf.enable = true;
     environment.systemPackages = with pkgs; [
-        libsForQt5.qtstyleplugin-kvantum
-     ];
+      libsForQt5.qtstyleplugin-kvantum
+    ];
     environment.variables = {
-       "QT_STYLE_OVERRIDE"="kvantum";
+      "QT_STYLE_OVERRIDE" = "kvantum";
     };
 
     services.xserver = {
       enable = true;
 
-      layout = "us";
-      xkbVariant = "altgr-intl";
+      xkb = {
+        layout = "us";
+        variant = "altgr-intl";
+      };
 
       displayManager.sddm.enable = true;
       desktopManager.plasma5 = {
