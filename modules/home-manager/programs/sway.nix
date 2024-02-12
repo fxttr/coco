@@ -22,6 +22,15 @@ in
 
   config = mkIf cfg.enable
     {
+      services.mako = {
+        enable = true;
+
+        options = {
+          backgroundColor = "#2d2a2e";
+          borderColor = "#a9dc76";
+        };
+      };
+
       services.swayidle = {
         enable = true;
         timeouts = [
