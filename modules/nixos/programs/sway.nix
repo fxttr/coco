@@ -34,12 +34,13 @@ in {
 
       extraPackages = with pkgs; [
         swaylock
-        swayidle
         wl-clipboard
         alacritty
         bemenu
-        feh
+        imv
+        mpv
         ranger
+        zathura
       ];
 
       extraSessionCommands = ''
