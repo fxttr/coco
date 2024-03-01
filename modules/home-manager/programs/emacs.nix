@@ -15,7 +15,7 @@ in {
       extraPackages = (epkgs:
         (with pkgs; [
           pkgs.mu
-	  pkgs.emacsPackages.mu4e
+          pkgs.emacsPackages.mu4e
         ]) ++
         (with epkgs.melpaPackages; [
           monokai-pro-theme

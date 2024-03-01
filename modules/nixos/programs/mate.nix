@@ -13,8 +13,10 @@ in {
     services.xserver = {
       enable = true;
 
-      layout = "us";
-      xkbVariant = "altgr-intl";
+      xkb = {
+        layout = "us";
+        variant = "altgr-intl";
+      };
 
       displayManager.lightdm.enable = true;
       desktopManager.mate = {

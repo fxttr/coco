@@ -13,6 +13,7 @@ let
 in
 {
   options.coco.sway.enable = mkEnableOption "Install and configure sway";
+
   options.coco.sway.wallpaper = mkOption {
     type = types.str;
     description = "Set the wallpaper";
@@ -21,6 +22,13 @@ in
 
   config = mkIf cfg.enable
     {
+      services.mako = {
+        enable = true;
+
+        backgroundColor = "#2d2a2e";
+        borderColor = "#a9dc76";
+      };
+
       services.swayidle = {
         enable = true;
         timeouts = [
@@ -35,9 +43,7 @@ in
       wayland.windowManager.sway = {
         enable = true;
         systemd.enable = true;
-        extraOptions = [
-           "--unsupported-gpu" 
-        ];
+
         config = rec {
           modifier = "Mod4";
           terminal = "alacritty";
