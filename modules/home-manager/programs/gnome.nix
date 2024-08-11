@@ -28,7 +28,6 @@ in
           disable-user-extensions = false;
           enabled-extensions = [
             "user-theme@gnome-shell-extensions.gcampax.github.com"
-            "dash-to-panel@jderose9.github.com"
           ];
         };
 
@@ -40,7 +39,6 @@ in
 
     home.packages = with pkgs; [
       gnomeExtensions.user-themes
-      gnomeExtensions.dash-to-panel
       palenight-theme
     ];
   };
