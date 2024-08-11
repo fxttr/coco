@@ -13,7 +13,6 @@ in
       settings = {
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
-          enable-hot-corners = false;
         };
         "org/gnome/shell" = {
           favorite-apps = [
@@ -26,9 +25,6 @@ in
           ];
 
           disable-user-extensions = false;
-          enabled-extensions = [
-            "user-theme@gnome-shell-extensions.gcampax.github.com"
-          ];
         };
 
         "org/gnome/shell/extensions/user-theme" = {
@@ -38,7 +34,6 @@ in
     };
 
     home.packages = with pkgs; [
-      gnomeExtensions.user-themes
       palenight-theme
     ];
   };
