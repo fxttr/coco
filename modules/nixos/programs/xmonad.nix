@@ -32,4 +32,5 @@ in
         variant = "altgr-intl";
       };
     };
-  }
+  };
+ }
