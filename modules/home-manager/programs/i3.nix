@@ -74,7 +74,7 @@ in
             let
               mod = config.xsession.windowManager.i3.config.modifier;
               inherit (config.xsession.windowManager.i3.config)
-                left down up right menu terminal;
+                menu terminal;
             in
             {
               "${mod}+Shift+Return" = "exec ${terminal}";
@@ -83,20 +83,10 @@ in
               "${mod}+Shift+d" = "exec ${terminal} -e ranger";
               "${mod}+Shift+b" = "exec swaylock -i ${wallpaper}";
 
-              "${mod}+${left}" = "focus left";
-              "${mod}+${down}" = "focus down";
-              "${mod}+${up}" = "focus up";
-              "${mod}+${right}" = "focus right";
-
               "${mod}+Left" = "focus left";
               "${mod}+Down" = "focus down";
               "${mod}+Up" = "focus up";
               "${mod}+Right" = "focus right";
-
-              "${mod}+Shift+${left}" = "move left";
-              "${mod}+Shift+${down}" = "move down";
-              "${mod}+Shift+${up}" = "move up";
-              "${mod}+Shift+${right}" = "move right";
 
               "${mod}+Shift+Left" = "move left";
               "${mod}+Shift+Down" = "move down";
