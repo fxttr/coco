@@ -30,7 +30,7 @@ in
             foreground = "#${colorscheme.dark.fg_0}";
             dim_foreground = "#${colorscheme.dark.dim_0}";
           };
-          
+
           colors.normal = {
             black = "#636363";
             red = "#${colorscheme.dark.red}";
@@ -65,13 +65,9 @@ in
         enable = true;
 
         extraConfig = ""
-          default_border
-          pixel 1
-          default_floating_border
-          pixel 1
-          for_window [ class="^.*" ]
-          border
-          pixel 1
+          default_border pixel 1
+          default_floating_border pixel 1
+          for_window [ class="^.*" ] border pixel 1
           "";
 
         config = rec {
