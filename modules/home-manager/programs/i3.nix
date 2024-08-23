@@ -31,6 +31,12 @@ in
       xsession.windowManager.i3 = {
         enable = true;
 
+        extraConfig = ''
+          default_border pixel 1
+          default_floating_border pixel 1
+          for_window [class="^.*"] border pixel 1
+        '';
+
         config = rec {
           modifier = "Mod4";
           floating.modifier = "Mod4";
