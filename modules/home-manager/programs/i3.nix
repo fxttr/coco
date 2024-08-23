@@ -101,7 +101,6 @@ in
               "${mod}+Shift+c" = "kill";
               "${mod}+p" = "exec ${menu}";
               "${mod}+Shift+d" = "exec ${terminal} -e ranger";
-              "${mod}+Shift+b" = "exec swaylock -i ${wallpaper}";
 
               "${mod}+h" = "focus left";
               "${mod}+j" = "focus down";
