@@ -22,6 +22,13 @@ in
 
   config = mkIf cfg.enable
     {
+      programs.alacritty = {
+        enable = true;
+        settings = {
+          import = with pkgs; [ alacritty-theme.afterglow ];
+        };
+      };
+      
       services.polybar = {
         enable = true;
         config = ./polybar/config.ini;
