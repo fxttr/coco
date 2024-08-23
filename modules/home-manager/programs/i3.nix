@@ -22,19 +22,39 @@ in
 
   config = mkIf cfg.enable
     {
+      services.polybar = {
+        enable = true;
+        config = ./polybar/config.ini;
+        script = "polybar mainBar &";
+      };
+
       xsession.windowManager.i3 = {
         enable = true;
 
         config = rec {
           modifier = "Mod4";
+          floating.modifier = "Mod4";
           terminal = "alacritty";
           fonts = fontConf;
 
-          bars = [
-            {
-              position = "bottom";
-              statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs";
-            }
+          workspaceOutputAssign = [
+            { workspace = "1"; output = "HDMI-1"; }
+            { workspace = "2"; output = "HDMI-1"; }
+            { workspace = "3"; output = "HDMI-1"; }
+            { workspace = "4"; output = "HDMI-1"; }
+            { workspace = "5"; output = "HDMI-1"; }
+            { workspace = "6"; output = "DP-3"; }
+            { workspace = "7"; output = "DP-3"; }
+            { workspace = "8"; output = "DP-3"; }
+            { workspace = "9"; output = "DP-3"; }
+            { workspace = "10"; output = "DP-3"; }
+          ];
+
+          bars = [ ];
+
+          startup = [
+            { command = "systemctl --user restart polybar"; always = true; notification = false; }
+            { command = "feh --bg-tile ${wallpaper} &"; always = true; notification = true; }
           ];
 
           colors = {
@@ -83,15 +103,15 @@ in
               "${mod}+Shift+d" = "exec ${terminal} -e ranger";
               "${mod}+Shift+b" = "exec swaylock -i ${wallpaper}";
 
-              "${mod}+Left" = "focus left";
-              "${mod}+Down" = "focus down";
-              "${mod}+Up" = "focus up";
-              "${mod}+Right" = "focus right";
+              "${mod}+h" = "focus left";
+              "${mod}+j" = "focus down";
+              "${mod}+k" = "focus up";
+              "${mod}+l" = "focus right";
 
-              "${mod}+Shift+Left" = "move left";
-              "${mod}+Shift+Down" = "move down";
-              "${mod}+Shift+Up" = "move up";
-              "${mod}+Shift+Right" = "move right";
+              "${mod}+Shift+h" = "move left";
+              "${mod}+Shift+j" = "move down";
+              "${mod}+Shift+k" = "move up";
+              "${mod}+Shift+l" = "move right";
 
               "${mod}+1" = "workspace number 1";
               "${mod}+2" = "workspace number 2";
