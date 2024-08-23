@@ -9,6 +9,7 @@ let
     names = [ "Source Code Pro" ];
     size = 11.0;
   };
+
   cfg = config.coco.i3;
 in
 {
@@ -22,6 +23,12 @@ in
 
   config = mkIf cfg.enable
     {
+      home.packages = [
+        pkgs.feh
+        pkgs.ranger
+        pkgs.dmenu
+      ];
+
       programs.alacritty = {
         enable = true;
         settings = {

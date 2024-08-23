@@ -1,1 +1,1 @@
-{ imports = [ ./sway.nix ./plasma.nix ./gnome.nix ./mate.nix ./swm.nix ./xmonad.nix ./i3.nix ]; }
+{ imports = [ ./sway.nix ./swm.nix ./xmonad.nix ./i3.nix ]; }
