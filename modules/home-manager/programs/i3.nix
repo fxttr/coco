@@ -25,10 +25,36 @@ in
       programs.alacritty = {
         enable = true;
         settings = {
-          import = with pkgs; [ alacritty-theme.afterglow ];
+          colors.primary = {
+            background = "#${colorscheme.dark.bg_0}";
+            foreground = "#${colorscheme.dark.fg_0}";
+            dim_foreground = "#${colorscheme.dark.dim_0}";
+          };
+          
+          colors.normal = {
+            black = "#636363";
+            red = "#${colorscheme.dark.red}";
+            green = "#${colorscheme.dark.green}";
+            yellow = "#${colorscheme.dark.yellow}";
+            blue = "#${colorscheme.dark.blue}";
+            magenta = "#${colorscheme.dark.magenta}";
+            cyan = "#${colorscheme.dark.cyan}";
+            white = "#f7f7f7";
+          };
+
+          colors.bright = {
+            black = "#636363";
+            red = "#${colorscheme.dark.br_red}";
+            green = "#${colorscheme.dark.br_green}";
+            yellow = "#${colorscheme.dark.br_yellow}";
+            blue = "#${colorscheme.dark.br_blue}";
+            magenta = "#${colorscheme.dark.br_magenta}";
+            cyan = "#${colorscheme.dark.br_cyan}";
+            white = "#f7f7f7";
+          };
         };
       };
-      
+
       services.polybar = {
         enable = true;
         config = ./polybar/config.ini;
@@ -38,11 +64,15 @@ in
       xsession.windowManager.i3 = {
         enable = true;
 
-        extraConfig = ''
-          default_border pixel 1
-          default_floating_border pixel 1
-          for_window [class="^.*"] border pixel 1
-        '';
+        extraConfig = ""
+          default_border
+          pixel 1
+          default_floating_border
+          pixel 1
+          for_window [ class="^.*" ]
+          border
+          pixel 1
+          "";
 
         config = rec {
           modifier = "Mod4";
