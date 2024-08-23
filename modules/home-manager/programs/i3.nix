@@ -68,7 +68,7 @@ in
             };
           };
 
-          menu = "${pkgs.dmenu}/bin/dmenu-run -nb #${colorscheme.dark.bg_0} -sb #${colorscheme.dark.bg_0} -sf #${colorscheme.dark.green}";
+          menu = "${pkgs.dmenu}/bin/dmenu_run -nb #${colorscheme.dark.bg_0} -sb #${colorscheme.dark.bg_0} -sf #${colorscheme.dark.green}";
 
           keybindings =
             let
