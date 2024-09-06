@@ -5,10 +5,12 @@ with lib;
 let
   wallpaper = cfg.wallpaper;
   colorscheme = import ./../../colors.nix;
+  
   fontConf = {
     names = [ "Source Code Pro" ];
     size = 11.0;
   };
+
   extra = ''
     set +x
     ${pkgs.util-linux}/bin/setterm -blank 0 -powersave off -powerdown 0
@@ -25,6 +27,12 @@ let
 in
 {
   options.coco.xmonad.enable = mkEnableOption "Install xmonad";
+
+  options.coco.xmonad.wallpaper = mkOption {
+    type = types.str;
+    description = "Set the wallpaper";
+    default = "";
+  };
 
   config = mkIf cfg.enable
     {
