@@ -9,11 +9,6 @@ in
   options.coco.xmonad.enable = mkEnableOption "Install and configure xmonad";
 
   config = mkIf cfg.enable {
-    xdg.portal = {
-      enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    };
-
     services.xserver = {
       enable = true;
 
@@ -22,10 +17,10 @@ in
         lightdm.enable = true;
       };
 
-      windowManager.xmonad = {
-        enable = true;
-        enableContribAndExtras = true;
-      };
+      #windowManager.xmonad = {
+      #  enable = true;
+      #  enableContribAndExtras = true;
+      #};
 
       xkb = {
         layout = "us";
