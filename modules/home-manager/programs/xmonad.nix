@@ -19,9 +19,9 @@ let
     ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
   '';
 
-  hdmiExtra = ''
-    ${pkgs.xorg.xrandr}/bin/xrandr xrandr --output HDMI-0 --primary --mode 1920 x1080 --pos 0 x0 --rotate normal --output DP-0 --off --output DP-1 --mode 1920 x1080 --pos 1920 x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off
-  '';
+#  hdmiExtra = ''
+#   ${pkgs.xorg.xrandr}/bin/xrandr xrandr --output HDMI-0 --primary --mode 1920 x1080 --pos 0 x0 --rotate normal --output DP-0 --off --output DP-1 --mode 1920 x1080 --pos 1920 x0 --rotate normal --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off
+#  '';
 
   cfg = config.coco.xmonad;
 in
@@ -152,7 +152,7 @@ in
       xsession = {
         enable = true;
 
-        initExtra = extra + hdmiExtra;
+        initExtra = extra;
 
         windowManager.xmonad = {
           enable = true;
