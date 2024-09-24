@@ -17,10 +17,10 @@ in
         lightdm.enable = true;
       };
 
-      #windowManager.xmonad = {
-      #  enable = true;
-      #  enableContribAndExtras = true;
-      #};
+      windowManager.xmonad = {
+        enable = true;
+        enableContribAndExtras = true;
+      };
 
       xkb = {
         layout = "us";
