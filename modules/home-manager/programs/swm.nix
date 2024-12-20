@@ -4,6 +4,7 @@ with lib;
 
 let
   cfg = config.coco.swm;
+  wallpaper = cfg.wallpaper;
 
   stc = ''${(pkgs.fetchFromGitHub {
     owner = "fxttr";
@@ -18,22 +19,15 @@ let
     rev = "257cd74cd6ce93ce47c656dc37fdec8a4f093d8b";
     sha256 = "sha256-cxZynbKESIE8OLyMssMm5Rs9fcXTHtUWUWG4m/rdbeo=";
   });
-
-  extra = ''
-    set +x
-    ${pkgs.util-linux}/bin/setterm -blank 0 -powersave off -powerdown 0
-    ${pkgs.xorg.xset}/bin/xset s off
-    ${pkgs.xcape}/bin/xcape -e "Hyper_L=Tab;Hyper_R=backslash"
-    ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
-    ${pkgs.feh}/bin/feh --bg-fill ${inputs.artwork}/wallpapers/nix-wallpaper-stripes.png
-
-    # Fix for Java apps
-    export _JAVA_AWT_WM_NONREPARENTING=1
-    ${pkgs.wmname}/bin/wmname "LG3D"
-  '';
 in
 {
   options.coco.swm.enable = mkEnableOption "Install swm";
+
+  options.coco.swm.wallpaper = mkOption {
+    type = types.str;
+    description = "Set the wallpaper";
+    default = "";
+  };
 
   config = mkIf cfg.enable
     {
@@ -115,7 +109,18 @@ in
       xsession = {
         enable = true;
 
-        initExtra = extra;
+        initExtra = ''
+          set +x
+          ${pkgs.util-linux}/bin/setterm -blank 0 -powersave off -powerdown 0
+          ${pkgs.xorg.xset}/bin/xset s off
+          ${pkgs.xcape}/bin/xcape -e "Hyper_L=Tab;Hyper_R=backslash"
+          ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
+          ${pkgs.feh}/bin/feh --bg-fill ${wallpaper}
+
+          # Fix for Java apps
+          export _JAVA_AWT_WM_NONREPARENTING=1
+          ${pkgs.wmname}/bin/wmname "LG3D"
+        '';
 
         windowManager.command =
           let
