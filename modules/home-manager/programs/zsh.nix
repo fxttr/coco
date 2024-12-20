@@ -31,13 +31,6 @@ in {
         GPG_TTY = "$(tty)";
         _JAVA_AWT_WM_NONREPARENTING = "1";
       };
-
-      shellAliases = {
-        ll = "ls -l";
-        nix-search = "nix search nixpkgs";
-        nbuild = "sudo nixos-rebuild switch --flake .";
-        hbuild = "home-manager switch --flake .";
-      };
     };
   };
 }
